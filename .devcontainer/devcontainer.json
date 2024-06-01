@@ -5,7 +5,7 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:20",
 	"features": {
-		"ghcr.io/devcontainers/features/git:1": {}
+		// "ghcr.io/devcontainers/features/git:1": {}
 	},
 	// "runArgs": ["--name", "ValheimDiscordBot"],
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -18,12 +18,12 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"phind.phind",
-				"GitHub.copilot",
-				"GitHub.copilot-chat",
-				"ms-azuretools.vscode-docker",
-				"hediet.vscode-drawio",
-				"TianyangGuan.codemap"
+				"phind.phind"
+				// "GitHub.copilot",
+				// "GitHub.copilot-chat",
+				// "ms-azuretools.vscode-docker",
+				// "hediet.vscode-drawio",
+				// "TianyangGuan.codemap"
 			]
 		}
 	}

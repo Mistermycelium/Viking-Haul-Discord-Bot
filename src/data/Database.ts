@@ -10,7 +10,7 @@ const dbContext = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.p
   host: dbConfig.host,
   port: 2561,
   dialect: dbConfig.dialect as Dialect,
-  logging: false,
+  logging: console.log,
 });
 
 User.initModel(dbContext);

@@ -71,6 +71,7 @@ module.exports = {
   async reply(interaction: Interaction, message: string): Promise<void> {
     await interaction.reply({ content: message, ephemeral: true });
   },
+  // TODO add a return Promise<boolean> to this function so that we avoid executing line 62
   async checkIfUserIsRegistered(interaction: Interaction, id: string) {
     try {
       const discordId = interaction.user.id;

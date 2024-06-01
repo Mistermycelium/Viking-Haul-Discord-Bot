@@ -26,7 +26,7 @@ class UserServerStatusRepository implements IRepository<UserServerStatus> {
     })
       .then(UserServerStatuss => UserServerStatuss.map(userServerStatus => userServerStatus.dataValues as UserServerStatus))
       .catch(err => {
-        throw new Error(`Error executing query: ${query}, error: ${err}`);
+        throw new Error(`Error executing query: ${JSON.stringify(query)}, error: ${err}`);
       });
   }
 

@@ -26,7 +26,7 @@ class UserRepository implements IRepository<User> {
     })
       .then(users => users.map(user => user.dataValues as User))
       .catch(err => {
-        throw new Error(`Error executing query: ${query}, error: ${err}`);
+        throw new Error(`Error executing query: ${JSON.stringify(query)}, error: ${err}`);
       });
   }
 

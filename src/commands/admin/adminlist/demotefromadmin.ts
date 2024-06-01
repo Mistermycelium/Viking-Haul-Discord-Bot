@@ -28,12 +28,17 @@ module.exports = {
           .setRequired(true)
           .setDescription('The User to remove from the adminlist')),
   async execute(interaction: Interaction) {
-    const user = interaction.options.getMentionable('user');
+    const mentionable = interaction.options.getMentionable('user');
+    const userId = mentionable.user.id;
+    const userName = mentionable.user.name;
+    const user = { Username: userName, DiscordId: userId };
+    console.log(`${mentionable.user.id}`);
+    await interaction.reply({ content: `Mentionable: ${mentionable}, ${mentionable.user.id}`, ephemeral: false });
     if (await adminlistService.exists(user)) {
-      adminlistService.remove(user);
-      await interaction.reply({ content: `${user} removed.`, ephemeral: true });
+      adminlistService.remove(userId);
+      await interaction.reply({ content: `${userName} removed.`, ephemeral: true });
     } else {
-      await interaction.reply({ content: `Failed: ${user}`, ephemeral: true });
+      await interaction.reply({ content: `Failed: ${userName}`, ephemeral: true });
     }
   },
 };
